@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIENSTAG - fast wie FREITAG.</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="icon" type="image/x-icon" href="content/f_favicon.png" style="width: 100%; height: 100%;">
+</head>
+<script src="js/common.js"></script>
+<script src="js/contact.js"></script>
+<body onload="burgerMenu()">
+  <header id="header" class="sticky">
+    <a href="index.html"><img src="images/Logo_Dienstag.png" alt="" class="logo"></a>
+      <div id="burger-menu" class="burger-menu" onclick="burgerMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="#shop">Shop</a>
+        <a href="index.html#shop">Kontakt</a>
+        <a href="game.html"><button>Jetzt Preise gewinnen</button></a>
+      </nav>
+      <nav class="burger-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="index.html#shop" class="nav-link">Shop</a>
+        <a href="contact.html" class="nav-link">Kontakt</a>
+        <a href="game.html" class="nav-link"><button>Jetzt Preise gewinnen</button></a>
+    </nav> 
+</header>
+
+<div class="content">
+
+  <section class="content-section">
+  <div class="title titleTransform">
+    <h4 id="tag-line" class="dark">Game</h4>
+    <h2 id="sub-title" class="dark">Gewinne tolle Preise</h2>
+  </div>
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Simple Clicker Game</title>
+      <style>
+          body {
+              font-family: Arial, sans-serif;
+              text-align: center;
+          }
+          #score {
+              font-size: 24px;
+              margin-bottom: 20px;
+          }
+          #clicker {
+              width: 200px;
+              height: 100px;
+              font-size: 24px;
+              cursor: pointer;
+          }
+          #time {
+              font-size: 20px;
+          }
+      </style>
+  </head>
+  <body>
+      <h1>Simple Clicker Game</h1>
+      <div id="score">Score: <span id="scoreValue">0</span></div>
+      <button id="clicker">Click Me!</button>
+      <div id="time">Time Remaining: <span id="timeValue">30</span> seconds</div>
+  
+      <script>
+          // Get elements
+          const scoreElement = document.getElementById('scoreValue');
+          const clickerButton = document.getElementById('clicker');
+          const timeElement = document.getElementById('timeValue');
+  
+          // Initialize variables
+          let score = 0;
+          let timeLeft = 30;
+          let timerInterval;
+  
+          // Function to update time display
+          function updateTime() {
+              timeElement.textContent = timeLeft;
+          }
+  
+          // Timer function
+          function startTimer() {
+              updateTime();
+              timerInterval = setInterval(() => {
+                  timeLeft--;
+                  updateTime();
+                  if (timeLeft <= 0) {
+                      clearInterval(timerInterval);
+                      clickerButton.removeEventListener('click', incrementScore);
+                      clickerButton.disabled = true;
+                      alert('Time\'s up! Your final score is: ' + score);
+                  }
+              }, 1000);
+          }
+  
+          // Clicker button click event
+          function incrementScore() {
+              // Increment score
+              score++;
+              // Update score display
+              scoreElement.textContent = score;
+          }
+  
+          // Start the game when the button is clicked
+          clickerButton.addEventListener('click', () => {
+              startTimer();
+              clickerButton.addEventListener('click', incrementScore);
+              clickerButton.disabled = true;
+          });
+      </script>
+  </body>
+  </html>
+  
+
+  </section>
+
+  <footer>
+    <div class="leftSide">
+        <h4 class="footerTitle">Disclaimer:</h4>
+        <p>Das ist ein Schulprojekt und keine reale Webseite!</p>
+        <p>Sarah, Samantha, Ria, Nando</p>
+    </div>
+    <div class="rightSide">
+      <div class="social-icons">
+        <a href="https://www.tiktok.com/" target="_blank"><img src="images/Social_Icons/tiktok-icon.svg" alt="TikTok Icon"></a>
+        <a href="https://www.instagram.com/" target="_blank"><img src="images/Social_Icons/instagram-icon.svg" alt="Instagram Icon"></a>
+        <a href="www.twitter.com"><img src="images/Social_Icons/twitter-icon.svg" alt="X Icon"></a>
+        <a href="https://www.facebook.com/" target="_blank"><img src="images/Social_Icons/facebook-icon.svg" alt="Facebook Icon"></a>
+    </div>
+
+    <div class="legal-links">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutzerklärung</a>
+        <a href="#">Zurück nach oben ^</a>
+    </div>
+    </div>
+</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIENSTAG - fast wie FREITAG.</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="icon" type="image/x-icon" href="content/f_favicon.png" style="width: 100%; height: 100%;">
+</head>
+<script src="js/common.js"></script>
+<body onload="burgerMenu()">
+    <header id="header" class="sticky">
+        <a href="index.html"><img src="images/Logo_Dienstag.png" alt="" class="logo"></a>
+          <div id="burger-menu" class="burger-menu" onclick="burgerMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+        <nav class="nav">
+          <a href="#" class="active">Home</a>
+          <a href="index.html#shop">Shop</a>
+          <a href="contact.html">Kontakt</a>
+          <a href="game.html"><button>Jetzt Preise gewinnen</button></a>
+        </nav>
+        <nav class="burger-nav">
+          <a href="#" class="nav-link active">Home</a>
+          <a href="#shop" class="nav-link">Shop</a>
+          <a href="contact.html" class="nav-link">Kontakt</a>
+          <a href="game.html" class="nav-link"><button>Jetzt Preise gewinnen</button></a>
+      </nav> 
+    </header>
+
+<div class="content">
+    <section id="home">
+          <video id="video-background" autoplay muted loop playsinline>
+            <source src="images/bkg_video_start.mp4" type="video/mp4">
+            Video can't be loaded.
+          </video>
+      
+        <div id="overlay"></div>
+
+      <div id="text-overlay">
+          <h1>DIENSTAG</h1>
+          <h2>fast wie FREITAG.</h2>
+          <a href="#shop"><img src="images/right-arrow.png" alt="" class="arrow"></a>
+      </div>
+    </section>
+    
+    <section id="shop" class="content-section">
+      <div class="title titleTransform">
+        <h4 id="tag-line">Shop</h4>
+        <h2 id="sub-title">Highlights aus dem Shop</h2>
+      </div>
+      <div>
+        <p class="formText subText">Gepächstücke nach deinem Geschmack</p>
+      </div>
+      <div class="cards">
+        <div class="card1 card">
+          <div class="cardImageContainer">
+            <img src="content/spiesse.jpg" alt="" class="cardImage">
+            <div class="cardImageOverlay"></div>
+          </div>
+          
+          <div class="cardDescription">
+            <div class="cardText">
+              <h2 class="cardTitle">Fusion Box 2 Share</h2>
+              <p>Diese Box beinhaltet <b>06 leckere Snacks</b></p>
+            </div>
+            <div class="cardButtons">
+              <Button class="cardButton" id="openPopupBtn" onclick="openPopup()">CHF 35.00</Button>
+            </div>
+          </div>
+        
+        </div>
+        <div class="card2 card">
+          <div class="cardImageContainer">
+            <img src="content/spiesse.jpg" alt="" class="cardImage">
+            <div class="cardImageOverlay"></div>
+          </div>
+          
+          <div class="cardDescription">
+            <div class="cardText">
+              <h2 class="cardTitle">Fusion Box Family</h2>
+              <p>Diese Box beinhaltet <b>12 leckere Snacks</b></p>
+            </div>
+            <div class="cardButtons">
+              <Button class="cardButton" onclick="openPopup()">CHF 65.00</Button>
+            </div>
+          </div>
+        
+        </div>
+        <div class="card3 card">
+          <div class="cardImageContainer">
+            <img src="content/spiesse.jpg" alt="" class="cardImage">
+            <div class="cardImageOverlay"></div>
+          </div>
+          
+          <div class="cardDescription">
+            <div class="cardText">
+              <h2 class="cardTitle">Fusion Box Party</h2>
+              <p>Diese Box beinhaltet <b>20 leckere Snacks</b></p>
+            </div>
+            <div class="cardButtons">
+              <Button class="cardButton" onclick="openPopup()">CHF 99.00</Button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="https://www.freitag.ch/de" target="_blank" class="shop-button"><button>Zum Shop</button></a>
+    </section>
+
+    <section id="gewinnspiel" class="content-section">
+      <div class="title">
+        <h4 id="tag-line" class="gewinnspielTitle">Gewinnspiel</h4>
+        <h2 id="sub-title" class="gewinnspielTitle">Jetzt tolle Preise gewinnen!</h2>
+      </div>
+      <div id="game">
+        
+      </div>
+  </section>
+  <footer>
+    <div class="leftSide">
+        <h4 class="footerTitle">Disclaimer:</h4>
+        <p>Das ist ein Schulprojekt und keine reale Webseite!</p>
+        <p>Sarah, Samantha, Ria, Nando</p>
+    </div>
+    <div class="rightSide">
+      <div class="social-icons">
+        <a href="https://www.tiktok.com/" target="_blank"><img src="images/Social_Icons/tiktok-icon.svg" alt="TikTok Icon"></a>
+        <a href="https://www.instagram.com/" target="_blank"><img src="images/Social_Icons/instagram-icon.svg" alt="Instagram Icon"></a>
+        <a href="www.twitter.com"><img src="images/Social_Icons/twitter-icon.svg" alt="X Icon"></a>
+        <a href="https://www.facebook.com/" target="_blank"><img src="images/Social_Icons/facebook-icon.svg" alt="Facebook Icon"></a>
+    </div>
+
+    <div class="legal-links">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutzerklärung</a>
+        <a href="#">Zurück nach oben ^</a>
+    </div>
+    </div>
+</footer>
+</div>
+</body>
+</html>
