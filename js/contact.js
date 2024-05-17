@@ -3,6 +3,7 @@ async function validateForm() {
     document.querySelectorAll('.error').forEach(el => el.remove());
     document.querySelectorAll('.input-error').forEach(el => el.classList.remove('input-error'));
 
+    
     let isValid = true;
 
     // Get form elements
@@ -55,7 +56,13 @@ document.addEventListener('DOMContentLoaded', () => {
         event.preventDefault(); // Prevent the form from submitting immediately
         const isValid = await validateForm(); // Validate the form asynchronously
         if (isValid) {
-            form.submit(); // Submit the form if validation passes
+                // Speichert die Daten in der Datenbank
+                await databaseClient.insertInto("form", {
+                  gender: gender.value, firstName: firstName.value, lastName: lastName.value, email: email.value, message: message.value 
+                });
+            form.style.display = "none"
+            if (document.getElementById("confirmationMessage").style.display = "none") {
+                document.getElementById("confirmationMessage").style.display = "block"
+            };
         }
-    });
-});
+})});

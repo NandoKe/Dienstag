@@ -43,3 +43,15 @@ button {
 .input-error {
     border: 1px solid red;
 }
+
+#confirmationMessage {
+    margin-right: auto;
+    margin-left: auto;
+    width: 50%;
+    margin-top: 40px;
+    display: none;
+}
+
+#confirmationMessage h2, #confirmationMessage p {
+    text-align: center;
+}
