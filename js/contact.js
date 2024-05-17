@@ -1,50 +1,61 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const form = document.getElementById("contactForm");
+async function validateForm() {
+    // Clear previous errors
+    document.querySelectorAll('.error').forEach(el => el.remove());
+    document.querySelectorAll('.input-error').forEach(el => el.classList.remove('input-error'));
 
-    form.addEventListener("submit", function(event) {
-        event.preventDefault();
-        if (validateForm()) {
-            console.log("Form is valid. Submitting...");
-            form.submit();
+    let isValid = true;
+
+    // Get form elements
+    const gender = document.getElementById('gender').value;
+    const firstName = document.getElementById('firstName').value.trim();
+    const lastName = document.getElementById('lastName').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    // Validate first name
+    if (!firstName) {
+        showError('firstName', 'Vorname ist erforderlich.');
+        isValid = false;
+    }
+
+    // Validate last name
+    if (!lastName) {
+        showError('lastName', 'Nachname ist erforderlich.');
+        isValid = false;
+    }
+
+    // Validate email format using a regex pattern
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        showError('email', 'Bitte geben Sie eine gültige E-Mail-Adresse ein.');
+        isValid = false;
+    }
+
+    // Validate message length (example: minimum 10 characters)
+    if (message.length < 10) {
+        showError('message', 'Die Nachricht muss mindestens 10 Zeichen enthalten.');
+        isValid = false;
+    }
+
+    return isValid;
+}
+
+function showError(elementId, message) {
+    const element = document.getElementById(elementId);
+    element.classList.add('input-error');
+    const error = document.createElement('div');
+    error.className = 'error';
+    error.innerText = message;
+    element.parentNode.appendChild(error);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('form');
+    form.addEventListener('submit', async (event) => {
+        event.preventDefault(); // Prevent the form from submitting immediately
+        const isValid = await validateForm(); // Validate the form asynchronously
+        if (isValid) {
+            form.submit(); // Submit the form if validation passes
         }
     });
-
-    function validateForm() {
-        let isValid = true;
-
-        const geschlecht = document.getElementById("geschlecht").value;
-        const vorname = document.getElementById("vorname").value;
-        const nachname = document.getElementById("nachname").value;
-        const email = document.getElementById("email").value;
-        const nachricht = document.getElementById("nachricht").value;
-
-        if (!geschlecht || !vorname || !nachname || !email || !nachricht) {
-            isValid = false;
-            alert("Bitte füllen Sie alle Felder aus.");
-            highlightInvalidFields();
-        } else if (!validateEmail(email)) {
-            isValid = false;
-            alert("Bitte geben Sie eine gültige E-Mail-Adresse ein.");
-            highlightInvalidFields();
-        }
-
-        return isValid;
-    }
-
-    function highlightInvalidFields() {
-        const inputs = form.querySelectorAll("input, select, textarea");
-        inputs.forEach(input => {
-            if (!input.validity.valid) {
-                input.classList.add("invalid-input");
-            } else {
-                input.classList.remove("invalid-input");
-                input.classList.add("valid-input");
-            }
-        });
-    }
-
-    function validateEmail(email) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    }
 });

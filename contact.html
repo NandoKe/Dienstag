@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="css/contact.css">
     <link rel="icon" type="image/x-icon" href="content/f_favicon.png" style="width: 100%; height: 100%;">
 </head>
-<script src="js/common.js"></script>
-<script src="js/contact.js"></script>
 <body onload="burgerMenu()">
   <header id="header" class="sticky">
     <a href="index.html"><img src="images/Logo_Dienstag.png" alt="" class="logo"></a>
@@ -39,35 +37,35 @@
     <h4 id="tag-line" class="dark">Kontakt</h4>
     <h2 id="sub-title" class="dark">Kontaktiere uns bei Fragen</h2>
   </div>
-    <form action="#" method="post">
-        <div>
-            <label for="geschlecht">Geschlecht:</label>
-            <select id="geschlecht" name="geschlecht" required>
-                <option value="Herr">Herr</option>
-                <option value="Frau">Frau</option>
-                <option value="Andere">Andere</option>
-            </select>
-        </div>
-        <div>
-            <label for="vorname">Vorname:</label>
-            <input type="text" id="vorname" name="vorname" required>
-        </div>
-        <div>
-            <label for="nachname">Nachname:</label>
-            <input type="text" id="nachname" name="nachname" required>
-        </div>
-        <div>
-            <label for="email">E-Mail:</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        <div>
-            <label for="nachricht">Nachricht:</label>
-            <textarea id="nachricht" name="nachricht" rows="4" required></textarea>
-        </div>
-        <div>
-            <button type="submit" class="shop-button">Senden</button>
-        </div>
-    </form>
+  <form action="#" method="post" novalidate>
+    <div>
+      <label for="gender">Geschlecht:</label>
+      <select id="gender" name="gender" required>
+          <option value="Herr">Herr</option>
+          <option value="Frau">Frau</option>
+          <option value="Andere">Andere</option>
+      </select>
+  </div>
+  <div>
+      <label for="firstName">Vorname:</label>
+      <input type="text" id="firstName" name="firstName" required>
+  </div>
+  <div>
+      <label for="lastName">Nachname:</label>
+      <input type="text" id="lastName" name="lastName" required>
+  </div>
+  <div>
+      <label for="email">E-Mail:</label>
+      <input type="email" id="email" name="email" required>
+  </div>
+  <div>
+      <label for="message">Nachricht:</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+  </div>
+  <div>
+      <button type="submit" class="shop-button">Senden</button>
+  </div>
+</form>
 
   </section>
 
@@ -93,5 +91,7 @@
     </div>
 </footer>
 </div>
+<script src="js/common.js"></script>
+<script src="js/contact.js"></script>
 </body>
 </html>

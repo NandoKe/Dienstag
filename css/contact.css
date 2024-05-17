@@ -22,6 +22,9 @@ textarea {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    resize: vertical;
+
+    font-family: "montserrat";
 }
 
 textarea {
@@ -32,14 +35,11 @@ button {
     width: 100% !important;
 }
 
-.invalid-input {
-    border-color: #ff9999;
+.error {
+    color: red;
+    font-size: 0.9em;
+    margin-bottom: 10px;
 }
-
-.invalid-input:focus {
-    border-color: #ff9999;
-}
-
-.valid-input {
-    border-color: #ccc;
+.input-error {
+    border: 1px solid red;
 }

@@ -341,13 +341,12 @@ nav a{
     flex-wrap: wrap;
     height: 100%;
     gap: 3em;
-    padding: 0 10%;
     flex-grow: 1;
 }
 
 .card {
-    width: 100%;
-    max-width: 30%;
+    max-width: 100%;
+    min-width: 20%;
     height: 100%;
     box-shadow: 5px 10px 40px rgb(31, 31, 31, 0.5);
 }
