@@ -9,12 +9,13 @@ const timerElement = document.getElementById('timer');
 const scoreElement = document.getElementById('score');
 const resultElement = document.getElementById('result');
 const clickImage = document.getElementById('clickButton');
+const personalCode = document.getElementById("personalCode");
 const modal = document.getElementById('resultModal');
 const closeModal = document.getElementsByClassName('close')[0];
 
-// Initial image width in em
+
 const originalWidth = 25;
-const increasedWidth = originalWidth + 5; // Increase size by 5em
+const increasedWidth = originalWidth + 5;
 
 clickImage.addEventListener('click', () => {
     if (!gameStarted) {
@@ -25,7 +26,6 @@ clickImage.addEventListener('click', () => {
         score++;
         scoreElement.textContent = `Clicks: ${score}`;
         
-        // Toggle image size
         if (isSizeIncreased) {
             clickImage.style.width = `${originalWidth}em`;
         } else {
@@ -47,21 +47,28 @@ function startGame() {
     }, 1000);
 }
 
-function endGame() {
-    gameEnded = true;
-    clickImage.style.pointerEvents = 'none'; // Disable further clicks
-
-    if (score >= 75) {
-        resultElement.textContent = "Congratulations! You win a 30% off gift card!";
-    } else if (score >= 50) {
-        resultElement.textContent = "Congratulations! You win a 20% off gift card!";
-    } else {
-        resultElement.textContent = "Sorry, you didn't win a gift card. Try again!";
-    }
-    modal.style.display = "block"; // Show the modal
+function personalDiscountCode() {
+    const randomNumber = Math.floor(Math.random() * 1000);
+    personalCode.textContent += "MeinCode" + randomNumber;
 }
 
-// Close the modal when the user clicks on <span> (x)
+function endGame() {
+    gameEnded = true;
+    clickImage.style.pointerEvents = 'none';
+
+    if (score >= 120) {
+        resultElement.textContent = "Herzlichen Glückwunsch! Du hast einen 30% Rabatt Gutschein gewonnen!";
+        setInterval(personalDiscountCode(), 10);
+    } else if (score >= 100) {
+        resultElement.textContent = "Herzlichen Glückwunsch! Du hast einen 20% Rabatt Gutschein gewonnen!";
+        setInterval(personalDiscountCode(), 10);
+    } else {
+        resultElement.textContent = "Schade, ledier hast du nicht gewonnen. Versuche es erneut!";
+        document.getElementsByClassName("personalCode").style.display = "none";
+    }
+    modal.style.display = "block";
+}
+
 closeModal.onclick = function() {
     modal.style.display = "none";
 }

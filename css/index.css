@@ -316,10 +316,14 @@ nav a{
     border-style: solid;
     border-color: rgb(41, 41, 41);
     border-width: 1px;
-    width: 70%;
+    width: 100%;
     height: 500px;
     margin-left: auto;
     margin-right: auto;
+    background-image: url("/images/Game-Screenshot.png");
+    background-size: cover;              
+    background-repeat: no-repeat;
+    background-position: center center; 
 }
 
 /*Section: Gewinnspiel End*/
@@ -551,3 +555,6 @@ footer {
     background-color: white !important;
     text-align: left !important;
 }
+
+/*Slider*/
+
