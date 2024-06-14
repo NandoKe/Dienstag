@@ -3,6 +3,7 @@
     background: white;
     padding: 20px;
     min-height: 40em;
+    background-image: url("/images/");
 }
 
 #timer, #score {

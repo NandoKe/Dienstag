@@ -11,6 +11,7 @@ const resultElement = document.getElementById('result');
 const clickImage = document.getElementById('clickButton');
 const personalCode = document.getElementById("personalCode");
 const modal = document.getElementById('resultModal');
+const discountBox = document.getElementById("discountBox");
 const closeModal = document.getElementsByClassName('close')[0];
 
 
@@ -64,7 +65,7 @@ function endGame() {
         setInterval(personalDiscountCode(), 10);
     } else {
         resultElement.textContent = "Schade, ledier hast du nicht gewonnen. Versuche es erneut!";
-        document.getElementsByClassName("personalCode").style.display = "none";
+        discountBox.style.display = "none"
     }
     modal.style.display = "block";
 }
